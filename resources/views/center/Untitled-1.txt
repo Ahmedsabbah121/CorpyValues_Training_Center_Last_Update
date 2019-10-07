@@ -1,0 +1,47 @@
+{{-- @foreach($data as $datum)
+                            @foreach($datum as $majors)
+                              @foreach($majors as $major)
+                              @dd($data)
+                                
+                              @endforeach
+                            @endforeach
+                          @endforeach --}}
+                          @for($i = 0 ; $i < count($data);$i++)
+                          @dd($data['majors'])
+                          @endfor
+
+
+
+                          <li @if($major == 0) class="active" @endif> <a href="#tab-{{ $major->major_id }}" data-toggle="tab" aria-expanded="false">{{ $major->major_name }}</a> </li> 
+
+
+
+
+
+
+
+                                            <div class="services-details clearfix">
+                                              <div class="p-20 p-sm-15 bg-lighter">
+                                                <h4 class="mt-0 line-height-1 sm-text-center"><a href="#">{{ $datum['course_name'] }}</a></h4>
+                                                
+                                                
+                                              </div>
+                                            </div>
+<ul class="list-inline text-theme-colored2 pull-left xs-pull-left  sm-pull-none sm-text-center">
+                                                  <li>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                  </li>
+                                                </ul>
+                          <div class="course-price bg-theme-colored3 pull-right sm-pull-none xs-pull-right sm-text-center mt-sm-10 mt-xs-0">
+                                                  <span class="text-white">${{ $datum['course_price'] }}</span>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <ul class="list-inline mt-15 mb-10 clearfix">
+                                                  
+                                                  <li class="text-theme-colored pull-right sm-pull-none xs-pull-right sm-text-center flip pr-0">Class Size: <span class="font-weight-700">{{ $datum['course_hours'] }}</span></li>
+                                                </ul>
+                                                <a class="btn btn-dark btn-theme-colored btn-sm text-uppercase mt-10" href="#">Learn Now</a> 
